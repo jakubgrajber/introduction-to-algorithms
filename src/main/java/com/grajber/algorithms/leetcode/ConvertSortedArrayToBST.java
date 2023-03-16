@@ -1,5 +1,7 @@
 package com.grajber.algorithms.leetcode;
 
+import com.grajber.algorithms.leetcode.common.TreeNode;
+
 /**
  * <a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">Leetcode.com</a>
  */
@@ -23,25 +25,6 @@ public class ConvertSortedArrayToBST {
 
         return new TreeNode(nums[mid], getBinaryTree(nums, p, mid-1), getBinaryTree(nums, mid+1, q));
     }
-
 }
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 
