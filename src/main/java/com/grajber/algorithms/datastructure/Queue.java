@@ -3,10 +3,10 @@ package com.grajber.algorithms.datastructure;
 import com.grajber.algorithms.datastructure.exception.OverflowException;
 import com.grajber.algorithms.datastructure.exception.UnderflowException;
 
-public interface Stack<T> {
+public interface Queue<T> {
 
-    void push(T element) throws OverflowException;
-    T pop() throws UnderflowException;
+    void enqueue(T element) throws OverflowException;
+    T dequeue() throws UnderflowException;
+
     boolean isEmpty();
-
 }

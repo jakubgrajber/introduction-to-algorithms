@@ -1,7 +1,7 @@
 package com.grajber.algorithms.datastructure;
 
-import com.grajber.algorithms.datastructure.exception.StackOverflowException;
-import com.grajber.algorithms.datastructure.exception.StackUnderflowException;
+import com.grajber.algorithms.datastructure.exception.OverflowException;
+import com.grajber.algorithms.datastructure.exception.UnderflowException;
 
 public class FixedSizeStack<T> implements Stack<T>{
 
@@ -20,16 +20,16 @@ public class FixedSizeStack<T> implements Stack<T>{
     }
 
     @Override
-    public void push(T element) throws StackOverflowException {
+    public void push(T element) throws OverflowException {
         if (top + 1 == capacity)
-            throw new StackOverflowException();
+            throw new OverflowException();
         stack[++top] = element;
     }
 
     @Override
-    public T pop() throws StackUnderflowException {
+    public T pop() throws UnderflowException {
         if (this.isEmpty())
-            throw new StackUnderflowException();
+            throw new UnderflowException();
         return stack[top--];
     }
 

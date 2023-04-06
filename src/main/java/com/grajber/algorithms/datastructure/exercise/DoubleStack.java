@@ -1,7 +1,7 @@
 package com.grajber.algorithms.datastructure.exercise;
 
-import com.grajber.algorithms.datastructure.exception.StackOverflowException;
-import com.grajber.algorithms.datastructure.exception.StackUnderflowException;
+import com.grajber.algorithms.datastructure.exception.OverflowException;
+import com.grajber.algorithms.datastructure.exception.UnderflowException;
 
 /**
  * Exercise 10.1-3
@@ -24,27 +24,27 @@ public class DoubleStack<T> {
         this.rightTop = capacity;
     }
 
-    public void pushLeft(T element) throws StackOverflowException {
+    public void pushLeft(T element) throws OverflowException {
         if (leftTop + 1 == rightTop)
-            throw new StackOverflowException();
+            throw new OverflowException();
         storage[++leftTop] = element;
     }
 
-    public void pushRight(T element) throws StackOverflowException {
+    public void pushRight(T element) throws OverflowException {
         if (rightTop - 1 == leftTop)
-            throw new StackOverflowException();
+            throw new OverflowException();
         storage[--rightTop] = element;
     }
 
-    public T popLeft() throws StackUnderflowException {
+    public T popLeft() throws UnderflowException {
         if (this.isLeftEmpty())
-            throw new StackUnderflowException();
+            throw new UnderflowException();
         return storage[leftTop--];
     }
 
-    public T popRight() throws StackUnderflowException {
+    public T popRight() throws UnderflowException {
         if (this.isRightEmpty())
-            throw new StackUnderflowException();
+            throw new UnderflowException();
         return storage[rightTop++];
     }
 

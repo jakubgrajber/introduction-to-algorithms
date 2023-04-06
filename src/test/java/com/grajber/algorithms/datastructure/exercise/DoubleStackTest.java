@@ -1,7 +1,7 @@
 package com.grajber.algorithms.datastructure.exercise;
 
-import com.grajber.algorithms.datastructure.exception.StackOverflowException;
-import com.grajber.algorithms.datastructure.exception.StackUnderflowException;
+import com.grajber.algorithms.datastructure.exception.OverflowException;
+import com.grajber.algorithms.datastructure.exception.UnderflowException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +19,7 @@ class DoubleStackTest {
     }
 
     @Test
-    void shouldBeAbleToPushAndPopAtBothStacks() throws StackOverflowException, StackUnderflowException {
+    void shouldBeAbleToPushAndPopAtBothStacks() throws OverflowException, UnderflowException {
 
         int leftElement = 1;
         int rightElement = 2;
@@ -45,8 +45,8 @@ class DoubleStackTest {
         doubleStack.pushRight(6);
         doubleStack.pushRight(5);
 
-        assertThrows(StackOverflowException.class, () -> doubleStack.pushLeft(11));
-        assertThrows(StackOverflowException.class, () -> doubleStack.pushRight(11));
+        assertThrows(OverflowException.class, () -> doubleStack.pushLeft(11));
+        assertThrows(OverflowException.class, () -> doubleStack.pushRight(11));
     }
 
 }
