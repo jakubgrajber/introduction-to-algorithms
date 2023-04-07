@@ -19,7 +19,7 @@ class DoubleStackTest {
     }
 
     @Test
-    void shouldBeAbleToPushAndPopAtBothStacks() throws OverflowException, UnderflowException {
+    void shouldBeAbleToPushAndPopAtBothStacks() {
 
         int leftElement = 1;
         int rightElement = 2;
@@ -31,7 +31,7 @@ class DoubleStackTest {
     }
 
     @Test
-    void shouldThrowStackOverflowException_whenBothStacksTopPointersMeetTogether() throws Exception {
+    void shouldThrowStackOverflowException_whenBothStacksTopPointersMeetTogether() {
 
         doubleStack.pushLeft(0);
         doubleStack.pushLeft(1);
