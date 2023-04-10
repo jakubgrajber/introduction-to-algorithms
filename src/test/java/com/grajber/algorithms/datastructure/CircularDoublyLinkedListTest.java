@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DoublyLinkedListTest {
+class CircularDoublyLinkedListTest {
 
-    private final DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+    private final CircularDoublyLinkedList<Integer> list = new CircularDoublyLinkedList<>();
 
     @Test
     void shouldBeAbleToAddElement() {
@@ -29,7 +29,7 @@ class DoublyLinkedListTest {
     }
 
     @Test
-    void shouldBeAbleToDeleteElement() {
+    void test() {
         list.add(1);
         list.add(2);
         list.add(3);
@@ -39,5 +39,4 @@ class DoublyLinkedListTest {
         assertEquals(1, second.prev().data());
         assertNull(second.next());
     }
-
 }
