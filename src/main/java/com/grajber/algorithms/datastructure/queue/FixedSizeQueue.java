@@ -1,4 +1,4 @@
-package com.grajber.algorithms.datastructure;
+package com.grajber.algorithms.datastructure.queue;
 
 import com.grajber.algorithms.datastructure.exception.OverflowException;
 import com.grajber.algorithms.datastructure.exception.UnderflowException;

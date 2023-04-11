@@ -1,4 +1,4 @@
-package com.grajber.algorithms.datastructure;
+package com.grajber.algorithms.datastructure.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

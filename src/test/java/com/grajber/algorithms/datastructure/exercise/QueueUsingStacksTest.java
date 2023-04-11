@@ -1,6 +1,6 @@
 package com.grajber.algorithms.datastructure.exercise;
 
-import com.grajber.algorithms.datastructure.Queue;
+import com.grajber.algorithms.datastructure.queue.Queue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

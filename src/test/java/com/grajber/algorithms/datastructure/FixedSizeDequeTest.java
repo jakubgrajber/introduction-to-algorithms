@@ -1,5 +1,7 @@
 package com.grajber.algorithms.datastructure;
 
+import com.grajber.algorithms.datastructure.deque.Deque;
+import com.grajber.algorithms.datastructure.deque.FixedSizeDeque;
 import com.grajber.algorithms.datastructure.exception.OverflowException;
 import com.grajber.algorithms.datastructure.exception.UnderflowException;
 import org.junit.jupiter.api.Test;

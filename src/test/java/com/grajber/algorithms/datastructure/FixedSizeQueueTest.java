@@ -2,6 +2,8 @@ package com.grajber.algorithms.datastructure;
 
 import com.grajber.algorithms.datastructure.exception.OverflowException;
 import com.grajber.algorithms.datastructure.exception.UnderflowException;
+import com.grajber.algorithms.datastructure.queue.FixedSizeQueue;
+import com.grajber.algorithms.datastructure.queue.Queue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

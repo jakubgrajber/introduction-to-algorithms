@@ -1,4 +1,6 @@
-package com.grajber.algorithms.datastructure;
+package com.grajber.algorithms.datastructure.linkedlist;
+
+import com.grajber.algorithms.datastructure.common.Node;
 
 public interface DynamicSet<T> {
 

@@ -1,8 +1,8 @@
 package com.grajber.algorithms.datastructure.exercise;
 
-import com.grajber.algorithms.datastructure.FixedSizeStack;
-import com.grajber.algorithms.datastructure.Queue;
-import com.grajber.algorithms.datastructure.Stack;
+import com.grajber.algorithms.datastructure.stack.FixedSizeStack;
+import com.grajber.algorithms.datastructure.queue.Queue;
+import com.grajber.algorithms.datastructure.stack.Stack;
 import com.grajber.algorithms.datastructure.exception.OverflowException;
 import com.grajber.algorithms.datastructure.exception.UnderflowException;
 

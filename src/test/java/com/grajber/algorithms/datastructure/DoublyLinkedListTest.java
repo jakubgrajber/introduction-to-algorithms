@@ -1,5 +1,7 @@
 package com.grajber.algorithms.datastructure;
 
+import com.grajber.algorithms.datastructure.common.Node;
+import com.grajber.algorithms.datastructure.linkedlist.DoublyLinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
