@@ -1,5 +1,7 @@
 package com.grajber.algorithms.datastructure.tree.binary;
 
+import java.util.Stack;
+
 /**
  * Temporary implementation just for exercise purpose.
  * Will be developed later
@@ -16,7 +18,7 @@ public class BinaryTree<T> {
         return root == null;
     }
 
-    public void print() {
+    public void printRecursively() {
         printRecursively(root);
     }
     private void printRecursively(BTreeNode<T> current) {
@@ -24,6 +26,25 @@ public class BinaryTree<T> {
         System.out.print(current.data() + " ");
         printRecursively(current.left());
         printRecursively(current.right());
+    }
+
+    public void printIteratively() {
+        if (root == null) return;
+        Stack<BTreeNode<T>> stack = new Stack<>();
+
+        BTreeNode<T> current = root;
+
+        while (current != null || stack.size() > 0) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left();
+            }
+
+            current = stack.pop();
+            System.out.print(current.data() + " ");
+
+            current = current.right();
+        }
     }
 
     public static void main(String[] args) {
@@ -35,6 +56,8 @@ public class BinaryTree<T> {
         root.right().right().right(new BTreeNode<>(6));
         BinaryTree<Integer> integerBinaryTree = new BinaryTree<>(root);
 
-        integerBinaryTree.print();
+        integerBinaryTree.printRecursively();
+        System.out.println();
+        integerBinaryTree.printIteratively();
     }
 }
