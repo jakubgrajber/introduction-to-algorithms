@@ -15,6 +15,8 @@ public class CircularDoublyLinkedList<T> implements DynamicSet<T>{
         while (temp.data() != key)
             temp = temp.next();
 
+        nil.data(null);
+
         if (temp == nil)
             return null;
         else return temp;
@@ -23,11 +25,15 @@ public class CircularDoublyLinkedList<T> implements DynamicSet<T>{
     @Override
     public void insertAfter(Node<T> node, T key) {
         Node<T> newlyInserted = new Node<>(key);
-        if (node.next() == nil)
+        if (node.next() == nil) {
             nil.prev(newlyInserted);
-        newlyInserted.next(node.next());
-        newlyInserted.prev(node);
-        node.next().prev(newlyInserted);
+            newlyInserted.next(nil);
+        } else {
+            newlyInserted.next(node.next());
+            newlyInserted.prev(node);
+            node.next().prev(newlyInserted);
+        }
+        node.next(newlyInserted);
     }
 
     @Override
@@ -46,6 +52,7 @@ public class CircularDoublyLinkedList<T> implements DynamicSet<T>{
             temp = temp.next();
         temp.next(newlyInserted);
         newlyInserted.prev(temp);
+        newlyInserted.next(nil);
         nil.prev(newlyInserted);
     }
 

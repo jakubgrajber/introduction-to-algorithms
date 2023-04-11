@@ -37,6 +37,6 @@ class CircularDoublyLinkedListTest {
         list.delete(second);
         second = list.search(3);
         assertEquals(1, second.prev().data());
-        assertNull(second.next());
+        assertNull(second.next().data());
     }
 }
