@@ -24,6 +24,11 @@ public class Heap<T extends Comparable<T>> {
         return this;
     }
 
+    public void buildMaxHeap() {
+        for (int i = size/2; i >= 1; i--)
+            maxHeapify(i);
+    }
+
     public void maxHeapify(int root) {
         int left = left(root);
         int right = right(root);
@@ -103,7 +108,7 @@ public class Heap<T extends Comparable<T>> {
                 .insert(14).insert(7).insert(9).insert(3)
                 .insert(2).insert(8).insert(1);
 
-        heap.maxHeapifyIteratively(2);
+        heap.buildMaxHeap();
         heap.print();
     }
 }
