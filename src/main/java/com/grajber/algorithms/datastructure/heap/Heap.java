@@ -1,6 +1,7 @@
 package com.grajber.algorithms.datastructure.heap;
 
-import java.lang.reflect.Array;
+import com.grajber.algorithms.datastructure.exception.OverflowException;
+
 import java.util.Arrays;
 
 public class Heap<T extends Comparable<T>> {
@@ -15,12 +16,12 @@ public class Heap<T extends Comparable<T>> {
         this.heap = (T[]) new Comparable[capacity+1];
     }
 
-    public boolean insert(T element) {
+    public Heap<T> insert(T element) {
         if (size >= capacity)
-            return false;
+            throw new OverflowException();
         heap[size+1] = element;
         size++;
-        return true;
+        return this;
     }
 
     public void maxHeapify(int root) {
@@ -31,13 +32,35 @@ public class Heap<T extends Comparable<T>> {
             largest = left;
         else
             largest = root;
-        if (right <= size && heap[right].compareTo(heap[root]) > 0)
+        if (right <= size && heap[right].compareTo(heap[largest]) > 0)
             largest = right;
         if (largest != root) {
             var temp = heap[largest];
             heap[largest] = heap[root];
             heap[root] = temp;
             maxHeapify(largest);
+        }
+    }
+
+    public void maxHeapifyIteratively(int root) {
+        while (true) {
+            int left = left(root);
+            int right = right(root);
+            int largest;
+            if (left <= size && heap[left].compareTo(heap[root]) > 0)
+                largest = left;
+            else
+                largest = root;
+            if (right <= size && heap[right].compareTo(heap[largest]) > 0 )
+                largest = right;
+
+            if (largest != root) {
+                var temp = heap[largest];
+                heap[largest] = heap[root];
+                heap[root] = temp;
+                root = largest;
+            } else
+                return;
         }
     }
 
@@ -72,5 +95,15 @@ public class Heap<T extends Comparable<T>> {
 
     public int right(int position) {
         return (position << 1) + 1;
+    }
+
+    public static void main(String[] args) {
+        Heap<Integer> heap = new Heap<>(10);
+        heap.insert(16).insert(4).insert(10)
+                .insert(14).insert(7).insert(9).insert(3)
+                .insert(2).insert(8).insert(1);
+
+        heap.maxHeapifyIteratively(2);
+        heap.print();
     }
 }
