@@ -41,6 +41,24 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
+    public void minHeapify(int root) {
+        int left = left(root);
+        int right = right(root);
+        int min;
+        if (left <= size && heap[left].compareTo(heap[root]) < 0)
+            min = left;
+        else
+            min = root;
+        if (right <= size && heap[right].compareTo(heap[root]) < 0)
+            min = right;
+        if (min != root) {
+            var temp = heap[min];
+            heap[min] = heap[root];
+            heap[root] = temp;
+            minHeapify(min);
+        }
+    }
+
     public void print() {
         System.out.println(Arrays.toString(heap));
     }
