@@ -24,6 +24,17 @@ public class Heap<T extends Comparable<T>> {
         return this;
     }
 
+    public void sort() {
+        buildMaxHeap();
+        for (int i = size; i >= 2; i--) {
+            var temp = heap[1];
+            heap[1] = heap[i];
+            heap[i] = temp;
+            size--;
+            maxHeapify(1);
+        }
+    }
+
     public void buildMaxHeap() {
         for (int i = size/2; i >= 1; i--)
             maxHeapify(i);
@@ -108,7 +119,8 @@ public class Heap<T extends Comparable<T>> {
                 .insert(14).insert(7).insert(9).insert(3)
                 .insert(2).insert(8).insert(1);
 
-        heap.buildMaxHeap();
+        heap.print();
+        heap.sort();
         heap.print();
     }
 }
